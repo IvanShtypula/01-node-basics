@@ -10,8 +10,8 @@ async function listContacts() {
 async function getContactById(contactId) {
   try {
     const list = await listContacts();
-    const itemById = list.filter((item) => item.id === contactId);
-    return itemById;
+    const contact = list.find((item) => item.id === contactId);
+    return contact;
   } catch (error) {
     console.log(error);
   }
@@ -21,8 +21,8 @@ async function getContactById(contactId) {
 async function removeContact(contactId) {
   try {
     const list = await listContacts();
-    const itemById = list.filter((item) => item.id !== contactId);
-    return itemById;
+    const contacts = list.filter((item) => item.id !== contactId);
+    return contacts;
   } catch (error) {
     console.log(error);
   }
